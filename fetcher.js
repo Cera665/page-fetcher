@@ -8,7 +8,7 @@ request(urlToFetch, (error, response, bosy) => {
   if (error) {
     console.log("Error:", error);
   }
-  fs.writeFile(`$localPath}`, bosy, function(error) {
+  fs.writeFile(`$localPath}`, body, function(error) {
     if (error) {
       console.log("Error:", error);
     } else {
@@ -16,25 +16,3 @@ request(urlToFetch, (error, response, bosy) => {
     }
   });
 });
-
-
-
-/* first try was not working!
-const args = process.argv.slice(2);
-let urlToFetch = args[0];
-let localPath = args[1];
-
-const writeFetched = function() {
-  request(urlToFetch, (error, response, body) => {
-    if (response.statuscode === 200) {   // 200 = ok! woot!
-      fs.writeFetched(localPath, body, (err => {
-        if (err) {
-          throw error;
-        } else {
-          console.log(`${body.length} bytes saved to ${localPath}`);
-        }
-      }));
-    }
-  });
-};
-*/
