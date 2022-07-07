@@ -4,7 +4,7 @@ const fs = require('fs');
 const localPath = process.argv[3];
 const urlToFetch = process.argv[2];
 
-request(urlToFetch, (error, response, bosy) => {
+request(urlToFetch, (error, response, body) => {
   if (error) {
     console.log("Error:", error);
   }
